@@ -9,11 +9,15 @@ import javax.validation.constraints.Size;
 /**
  * Created by LaunchCode
  */
-
+//Annotation flags SpringBoot that we want to store this class in the database
+//Every field within this class (name, id) will be stored within a table in the database unless otherwise specified
 @Entity
+//model class
 public class Category {
 
+    //id field should be a unique primary key
     @Id
+    //Hibernate will generate the id
     @GeneratedValue
     private int id;
 
@@ -21,8 +25,10 @@ public class Category {
     @Size(min=3, max=15)
     private String name;
 
+    //Hibernate will use this default constructor
     public Category() { }
 
+    //constructor that accepts a parameter to set name
     public Category(String name) {
         this.name = name;
 
