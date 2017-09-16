@@ -30,7 +30,7 @@ public class Category {
 
     //constructor that accepts a parameter to set name
     public Category(String name) {
-        this.name = name;
+        this.name = name; }
 
     //only a setter for the id because others should not get able to change the id
     public void setId(int id) {
