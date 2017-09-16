@@ -20,5 +20,6 @@ import javax.transaction.Transactional;
 @Transactional
 //Interface should extend the CrudRepository which is an interface that is part of the Spring framework data package.
 //CrudRepository is a parameterized interfaced that will store cheese objects and the keys of these cheese objects are integers.
+//CheeseDao interface will allow us to retrieve objects from the database and place objects in the database
 public interface CheeseDao extends CrudRepository<Cheese, Integer> {
 }
