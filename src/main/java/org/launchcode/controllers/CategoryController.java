@@ -23,11 +23,25 @@ public class CategoryController {
         //object that can be looped over that will provide all the cheeses in the database
         model.addAttribute("categories", categoryDao.findAll());
         return "jobs/category";
+    }
 
     @RequestMapping(value = "add", method = RequestMethod.GET)
-        public String Category(Model model) {
-            model.addAttribute("category", categoryDao.findAll());
-            model.addAttribute(new Category());
-            model.addAttribute("title", "Add Category");
-            return "category/add";
+    public String Category(Model model) {
+        model.addAttribute("category", categoryDao.findAll());
+        model.addAttribute(new Category());
+        model.addAttribute("title", "Add Category");
+        return "category/add"
     }
+
+    @RequestMapping(value = "add", method = RequestMethod.POST)
+    public String add(Model model,
+                      @ModelAttribute @Valid Category category, Errors errors)
+
+        if (errors.hasErrors()) {
+        model.addAttribute("title", "Add Cheese");
+        return "category/add";
+
+        //save a new entity
+        categoryDao.save(category);
+        return "redirect:";
+}
