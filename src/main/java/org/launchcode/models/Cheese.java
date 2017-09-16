@@ -9,6 +9,38 @@ import javax.validation.constraints.Size;
 /**
  * Created by LaunchCode
  */
+
+@Entity
+public class Category {
+
+    @Id
+    @GeneratedValue
+    private int id;
+
+    @NotNull
+    @Size(min=3, max=15)
+    private String name;
+
+    public Category() { }
+
+    public Category(String name) {
+        this.name = name;
+
+    //only a setter for the id because others should not get able to change the id
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    //public getter and setter for name
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+}
+
 @Entity
 public class Cheese {
 
