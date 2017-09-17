@@ -1,13 +1,11 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
-<head>
-    <meta charset="UTF-8">
-    <title>Categories</title>
-</head>
+<head th:replace="fragments :: head"></head>
 
 <body>
-<tr th:each="category : ${categories}">
     <!--display unordered list of category names-->
-    <ul th:text="${categoryDao.name}"></ul>
+    <ul>
+            <li th:each="category : ${categories}" th:text="${category.name}"></li>
+    </ul>
 </body>
 </html>
