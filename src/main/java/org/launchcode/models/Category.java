@@ -1,10 +1,10 @@
 package org.launchcode.models;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
+import java.util.ArrayList;
+import java.util.List;
 
 //Annotation flags SpringBoot that we want to store this class in the database
 //Every field within this class (name, id) will be stored within a table in the database unless otherwise specified
@@ -21,6 +21,13 @@ public class Category {
     @NotNull
     @Size(min=3, max=15)
     private String name;
+
+    //Each category will have many cheeses, each cheese can only have one category
+    @OneToMany
+    //Tells Hibernate to use the category_id column of the cheese table to determine which cheese belong to a given category
+    @JoinColumn(name = "category_id")
+    //List represents the list of all items in a given category
+    private List<Cheese> cheeses = new ArrayList<>();
 
     //Hibernate will use this default constructor
     public Category() { }
