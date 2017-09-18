@@ -36,6 +36,12 @@ public class Cheese {
     // table for the Category class.
     private Category category;
 
+    //configures the other side of the many-to-many relationship.  Field is mapped by the cheeses field of the Menu class
+    //Items in this list should correspond to the Menu objects that contain a given Cheese object in their cheeses list.
+    //Hibernate will notice that our list contains Menu objects and looks in that class for a property with the same name as that specified by the mappedBy attribute
+    @ManyToMany(mappedBy = "cheeses")
+    private List<Menu> menus;
+
 
     public Cheese(String name, String description) {
         this.name = name;
