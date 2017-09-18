@@ -36,10 +36,21 @@ public class Category {
     public Category(String name) {
         this.name = name; }
 
+
+    //Added this in to see if it fixed categoryDao error (it did not)
+    public List<Cheese> getCheeses() {
+        return cheeses;
+    }
+
     //only a setter for the id because others should not get able to change the id
-    public void setId(int id) {
-            this.id = id;
-        }
+    //public void setId(int id) {
+    //        this.id = id;
+    //    }
+
+    //Added this in to see if it fixed categoryDao error (it did not) - opposite of what you had above
+    public int getId() {
+        return id;
+    }
 
     //public getter and setter for name
     public String getName() {
@@ -49,4 +60,5 @@ public class Category {
     public void setName(String name) {
             this.name = name;
         }
+
 }
