@@ -37,7 +37,7 @@ public class Category {
         this.name = name; }
 
 
-    //Added this in to see if it fixed categoryDao error (it did not)
+    //Added getter for the list of cheeses to be able to use the cheese list within the Category model
     public List<Cheese> getCheeses() {
         return cheeses;
     }
@@ -47,7 +47,7 @@ public class Category {
     //        this.id = id;
     //    }
 
-    //Added this in to see if it fixed categoryDao error (it did not) - opposite of what you had above
+    //Added this (opposite of what we had above because we should only be able to get the ID, NOT set it.
     public int getId() {
         return id;
     }
