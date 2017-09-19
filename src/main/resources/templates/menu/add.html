@@ -7,8 +7,11 @@
 
 <nav th:replace="fragments :: navigation"><</nav>
 
+<!--template for form to add a new menu.-->
+<!--one form field-->
 <form method="post" th:object="${menu}">
     <div class="form-group">
+        <!--single field-->
         <label th:for="name">Name</label>
         <input class="form-control" th:field="*{name}" />
         <span th:errors="*{name}" class="error"></span>
