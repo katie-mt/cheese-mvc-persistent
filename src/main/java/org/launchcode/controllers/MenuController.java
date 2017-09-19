@@ -20,12 +20,22 @@ public class MenuController {
 
     @RequestMapping(value = "")
     public String index(Model model) {
-
-        //returns a collection of all category objects managed by categoryDao
-        menuDao.findAll();
         //object that can be looped over that will provide all the menu items in the database
-        model.addAttribute("menu", menuDao.findAll());
+        //returns a collection of all category objects managed by categoryDao
+        model.addAttribute("title", "Menus");
+        //under the attribute name "menus", pass the results of passing meuDao.findAll()
+        model.addAttribute("menus", menuDao.findAll());
 
-        return "menu/index";
+        return "menu/index/";
+    }
+
+    //available at menu/add
+    @RequestMapping(value = "add", method = RequestMethod.GET)
+    public String add(Model model) {
+        //adds a title
+        model.addAttribute("title", "Add Menu");
+        //passes a new menu item into the view
+        model.addAttribute(new Menu());
+        return "menu/add";
     }
 }

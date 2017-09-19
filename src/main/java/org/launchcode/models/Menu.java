@@ -24,7 +24,7 @@ public class Menu {
     //@JoinColumn(name = "category_id")
     //used to hold all items in the menu.  Hibernate will populate it for us based on the relationships
     //set up in the controllers.
-    private List<Cheese> cheeses = new ArrayList<>();
+    private List<Cheese> cheeses;
 
 
     //Hibernate will use this default constructor
@@ -59,9 +59,12 @@ public class Menu {
     }
 
     //Method that adds the given object to the list
-    public void addItem(Cheese item)  {
-        this.item = item;
-    } {
+    public void addItem(Cheese item) { cheeses.add(item); }
+
+    //public void addItem(Cheese item)  {
+    //    this.item = item;
+    //}
+
 
     }
 }

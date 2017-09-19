@@ -1,10 +1,22 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head th:replace="fragments :: head"></head>
+
+<body class = "container">
+
+<h1 th:text="${title}">Title</h1>
+
+<nav th:replace="fragments :: navigation"></nav>
+
+<!--display unordered list of category names-->
+<!--create route that will input the menu id number into the URL-->
+<ul>
+    <li th:each="menu : ${menus}">
+        <a th:href="'/menu/view/' + ${menu.id}" th:text="${menu.name}"></a>
+    </li>
+</ul>
+<!--link to add a new menu -->
+<p><a href="/menu/add">Add Menu</a></p>
 
 </body>
 </html>
