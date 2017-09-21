@@ -61,7 +61,7 @@ public class Menu {
     //Method that adds the given object to the list
     public void addItem(Cheese item) { cheeses.add(item); }
 
-    public int getMenuId() { return id; }
+
 
     //public void addItem(Cheese item)  {
     //    this.item = item;

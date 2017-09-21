@@ -104,9 +104,9 @@ public class MenuController {
     //process form
     @RequestMapping(value = "add-item", method = RequestMethod.POST)
     //taking in an AddMenuItemForm object, will use model binding so framework will build the object for us based on the form data
-    public String addItem(Model model, @ModelAttribute @Valid AddMenuItemForm form, Errors errors, @PathVariable int menuId) {
+    public String addItem(Model model, @ModelAttribute @Valid AddMenuItemForm form, Errors errors) {
+        int four = 2+2;
         //if errors, throw error messages and return to form
-        //return "menu/index";
         if (errors.hasErrors()) {
             model.addAttribute("form", form);
             return "menu/add-item";

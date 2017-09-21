@@ -33,9 +33,17 @@ public class AddMenuItemForm {
     //getters and setters
     public int getMenuId() {return menuId; }
 
+    public void setMenuId(int menuId) {
+        this.menuId = menuId;
+    }
+
     //public void setMenuId(int menuId) { this.menuId = menuId; }
 
     public int getCheeseId() {return cheeseId;}
+
+    public void setCheeseId(int cheeseId) {
+        this.cheeseId = cheeseId;
+    }
 
     public Iterable<Cheese> getCheeses() {
         return cheeses;
