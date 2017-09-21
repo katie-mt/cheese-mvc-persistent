@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head th:replace="fragments :: head"></head>
-
+<nav th:replace="fragments :: navigation"></nav>
 <body>
     <!--display unordered list of category names-->
     <ul>
             <li th:each="category : ${categories}" th:text="${category.name}"></li>
     </ul>
+
+    <p><a href="/category/add">Add Category</a></p>
 </body>
 </html>
