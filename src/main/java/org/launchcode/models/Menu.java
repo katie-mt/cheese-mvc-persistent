@@ -39,9 +39,9 @@ public class Menu {
         return id;
     }
 
-    public void setId(int id) {
-        this.id = id;
-    }
+    //public void setId(int id) {
+    //    this.id = id;
+    //}
 
 
     //getter and setter for name
@@ -61,11 +61,11 @@ public class Menu {
     //Method that adds the given object to the list
     public void addItem(Cheese item) { cheeses.add(item); }
 
+    public int getMenuId() { return id; }
+
     //public void addItem(Cheese item)  {
     //    this.item = item;
     //}
 
-
-    }
 }
 

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<head th:replace="fragments :: head"></head>
+<body class="container">
+<h1 th:text="${title}">Default Title</h1>
+
+<nav th:replace="fragments :: navigation"></nav>
+
+<!--form that posts and uses the addMenuItemForm object-->
+<!--action element added because by default this will display at /menu but the handler is displaying at menu/add-item-->
+<form method="post" style="max-width:600px;" th:object="${form}" action="/menu/add-item">
+    <div class="form-group">
+        <label th:for="CheeseId">Cheese</label>
+
+        <!--one select input which will be the dropdown that contains each cheese in the system which will determine what cheeses the user wants to add to the menu-->
+        <select name  ="cheeseId">
+            <option th:each="cheese : *{cheeses}"
+                    th:text="${cheese.name}"
+                    th:value="${cheese.id}">
+            </option>
+        </select>
+
+    </div>
+
+    <!--<div class="form-group">-->
+    <!--will pass the ID of the menu in the post request (not visible to user)-->
+    <!--when we select an item it will post the id of whatever item we choose.  We also need to know the menu id that they want to add that item to.  Therefore we need the specific menu id-->
+    <!--this input element will be hidden to the user-->
+    <input type = "hidden" name = "menuId" th:value="*{menu.id}" />
+    <!--submit button-->
+    <input type="submit" value="Add Item" />
+    <!--</div>-->
+
+</form>
+
+</body>
+</html>

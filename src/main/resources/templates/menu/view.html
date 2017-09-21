@@ -5,7 +5,7 @@
 
 <h1 th:text="${title}">Title</h1>
 
-<nav th:replace="fragments :: navigation"><</nav>
+<nav th:replace="fragments :: navigation"></nav>
 
 <!--loop over the list of items, displaying each of those.-->
 <ul>
@@ -15,6 +15,7 @@
 <!--if no cheeses throw error message-->
 <p th:unless="${cheeses.size()}"><i>No cheeses here</i></p>
 
+<!--link to add items to the menu, pipes in info for which menu the user wants to add to-->
 <p><a th:href="'/menu/add-item/' + ${menuId}">Add Cheese</a></p>
 
 </body>
